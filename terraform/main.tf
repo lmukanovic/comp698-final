@@ -9,8 +9,8 @@ provider "google" {
   region = "us-central1"
 }
 
-resource "google_compute_instance_template" "terraform-staging" {
-  name = "terraform-staging"
+resource "google_compute_instance_template" "lamia-terraform-staging" {
+  name = "lamia-terraform-staging"
   project = "comp698-lm2020"
   disk {
     source_image = "cos-cloud/cos-stable"
@@ -44,12 +44,12 @@ EOF
 }
 
 
-resource "google_compute_instance_group_manager" "default-terraform-staging" {
-  name = "terraform-manager-staging"
+resource "google_compute_instance_group_manager" "lamia-default-terraform-staging" {
+  name = "lamia-terraform-manager-staging"
   project = "comp698-lm2020"
   zone = "us-central1-f"
   base_instance_name = "staging"
-  instance_template  = "${google_compute_instance_template.terraform-staging.self_link}"
+  instance_template  = "${google_compute_instance_template.lamia-terraform-staging.self_link}"
   target_size = 1
 }
 
