@@ -91,9 +91,9 @@ resource "google_compute_instance_group_manager" "default-terraform-staging" {
 
 
 
-resource "google_compute_instance_group_manager" "default-terraform-prod" {
+resource "google_compute_instance_group_manager" "default-prod" {
   name = "terraform-manager-prod"
-  project = "comp698-vak1003"
+  project = "comp698-lm2020"
   zone = "us-central1-f"
   base_instance_name = "prod"
   instance_template  = "${google_compute_instance_template.terraform-prod.self_link}"
@@ -104,6 +104,6 @@ resource "google_compute_instance_group_manager" "default-terraform-prod" {
 
 resource "google_storage_bucket" "image-store" {
   project  = "comp698-lm2020"
-  name     = "lamiaa-comp698-final"
+  name     = "lamiaaa-comp698-final"
   location = "us-central1"
 }
