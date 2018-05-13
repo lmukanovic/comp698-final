@@ -34,7 +34,7 @@ resource "google_compute_instance_template" "terraform-staging" {
       gce-container-declaration = <<EOF
   spec:
     containers:
-    - image: 'gcr.io/comp698-lm2020/github-lmukanovic-comp698-final:7160fafc0600958aee4b51ba5f75be06b324558b'
+    - image: 'gcr.io/comp698-lm2020/github-lmukanovic-comp698-final:6f04c65053333ed30f5ebae924c3241bc46b6d88'
       name: service-container
       stdin: false
       tty: false
@@ -68,7 +68,7 @@ resource "google_compute_instance_template" "terraform-prod" {
       gce-container-declaration = <<EOF
   spec:
     containers:
-    - image: 'gcr.io/comp698-lm2020/github-lmukanovic-comp698-final:6f04c65053333ed30f5ebae924c3241bc46b6d88'
+    - image: 'gcr.io/comp698-lm2020/github-lmukanovic-comp698-final:7160fafc0600958aee4b51ba5f75be06b324558b'
       name: service-container
       stdin: false
       tty: false
