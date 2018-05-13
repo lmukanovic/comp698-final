@@ -8,5 +8,5 @@ if [[ $OUTPUT = *"COMP698 Final Project with Bootstrap"* ]]; then
   exit 0
 fi
 
-echo 'did not find expected text'
+echo 'did not findd expected text'
 exit 1
