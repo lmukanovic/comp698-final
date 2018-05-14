@@ -39,6 +39,7 @@ Why docker vs installing application directly on the host?
 What protections are there against accidentally introducing bad code into production?
 * Travis CI running along side your Git Repo
 * Creating a stagging area of code then pushing it to production
-* Protecting the master branch through github 
+* Protecting the master branch through github (dont make commits on master branch)
+* Creat smaller branches and merge to master when your ready
 * Creating pull requests whenever changing code 
 * When working in a team having multiple people review code before it gets pushed to production 
