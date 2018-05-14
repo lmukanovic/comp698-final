@@ -25,7 +25,7 @@ Why use virtualized resources?
 
 
 Include a diagram of the architecture from laptop to GCP
-
+![screen shot 2018-05-13 at 10 40 18 pm](https://user-images.githubusercontent.com/35884720/39976313-26105c58-5701-11e8-8e44-47b7444dd4c3.png)
 
 
 Why use bash commands vs clicking through UI?
