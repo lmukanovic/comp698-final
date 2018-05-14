@@ -24,7 +24,7 @@ Why use virtualized resources?
 * Virtual resources allow us to configure and set up a system once and then reuse it again. It gives us (developers) the freedom to have multiple versions running and the ability to destroy one if somethings goes wrong. Virtualized resources do not affect the system that it is using and therefore a developer can experiment and try new settings if they wish too.
 
 
-* Include a diagram of the architecture from laptop to GCP
+Include a diagram of the architecture from laptop to GCP
 
 
 
