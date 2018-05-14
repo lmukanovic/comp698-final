@@ -34,6 +34,11 @@ Why use bash commands vs clicking through UI?
 
 
 Why docker vs installing application directly on the host?
+* Installing applications directly on the host allows for installation issues that docker does not come with. When installing applications on a local system or vm, there are requirements that the application needs such as storage, a certain OS, or previous applications to install a current one. Docker has consistency across multiple development and release cycles, which allows for standardizing your environment. Docker provides repeatable development, build, test, and production environments. In addition, Docker has containers which allow you to commit changes to your Docker images and version control them. If there is a problem in one image it is easy to roll back to a previous image.
 
-
-* What protections are there against accidentally introducing bad code into production?
+What protections are there against accidentally introducing bad code into production?
+* Travis CI running along side your Git Repo
+* Creating a stagging area of code then pushing it to production
+* Protecting the master branch through github 
+* Creating pull requests whenever changing code 
+* When working in a team having multiple people review code before it gets pushed to production 
