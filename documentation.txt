@@ -76,10 +76,11 @@ git pull
 **Travis is giving me a weird error but GCP/Terraform is working correctly
 Compute Engine>staging-18x7>External IP (http://104.154.162.161) gives me Hello World! 
 
-Updating update the main.go, main_test.go, Dockerfile, functional-test.sh files
+Updating the main.go, main_test.go, Dockerfile, functional-test.sh files
 Then going git add, commit, pull request, travis, merge to master for each of them 
 
-Gcloud compute ssh terraform-configuration
+Logining into terraform-configuration server
+- Gcloud compute ssh terraform-configuration
 
 Added final resource to main.tf  then 
 Git branch updatet
