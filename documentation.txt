@@ -7,50 +7,58 @@ Opened terminal, went to Desktop folder called COMP698
 In COMP698, wrote, cloned repo from github
 •	configure the Github repo to protect your master branch
 •	Go to Settings (for repo comp698-final)>branches> Branch protection rules>choose master, select Protect this branch, select, Require status checks to pass before merging, select include administrators, hit save changes 
-On local repo copy, create two files 
+On local repo copy, created two files 
 -	Main.go
 -	Main_test.go
 Input code given (https://github.com/mathyourlife/comp698-final/tree/helloworld-source) 
-In terminal locate your local repo with the two files, do this twice for main.go and main_test.go 
-Push changes to github by, adding a branch
+In terminal located my local repo with the two files, did this twice for main.go and main_test.go 
+Push changes to github by
+adding a branch
 Commit message 
 pull request through github
 merge to master
+
 Create local docker file
 Open text editor, copy docker file components from (https://github.com/mathyourlife/comp698-final/blob/master/Dockerfile)
-Push changes to github by, adding a branch
+Push changes to github by
+adding a branch
 Commit message 
 pull request through github
 merge to master
 **Check what latest commit on github to make sure it matches local copy
--	On terminal, type git log and compare with repo on github, if the commit numbers are different 
--	In terminal type, git checkout master, git pull, then compare again, they should be the same now 
+-	On terminal, type git log and compare the latest commit with repo on github, if the commit numbers are different then complete step below
+-	In terminal type, git checkout master, git pull, then compare again, they should be the same commit numbers now 
+-      Best practice is to run git log and status every so often to make sure the latest commit numbers match the local repo and the Github repo
+
 Add .travis.yml file to local repo and push it to github for pull request validation 
-Push changes to github by, adding a branch
+Push changes to github by
+adding a branch
 Commit message 
 pull request through github
 merge to master
 configure travis CI on https://travis-ci.org/lmukanovic/comp698-final
-*Professor added file .travis.yml accepted PR) had error on terminal, fixed it through 
+*Professor added file .travis.yml (accepted PR) had error on terminal, fixed it through 
 git checkout master
 rm .travis.yml
 git pull
 
 
 
-Go to GCP, and search fro Build Trigger 
-Create trigger, github
-Select repo (comp698-final)
+Go to GCP, and search for Build Trigger 
+Create trigger,
+Select github repo (comp698-final)
 Name, branch master
 Image name- gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
 After creating, hit run trigger to master, wait until it builds successful 
+
 
 In comp698-final, create a subfolder calling it terraform 
 -	add terraform configuration files to your github repo in a terraform subdirectory
 -	copied from webserver and changed names and added new image 
        
 push local changes to github in terraform folder 
-Push changes to github by, adding a branch
+Push changes to github by
+adding a branch
 Commit message 
 pull request through github
 merge to master
@@ -60,33 +68,36 @@ login to terraform configuration server and run the file with terraform apply
 git clone comp698-final to terraform-configuration server
 cd terraform
 ls
-youll see main.tf 
+you'll see main.tf 
 run terraform apply 
 saw error,
 running terraform init
 again terraform apply 
--	name not available trying again- same steps
-Push changes to github by, adding a branch
+-	name not available trying again-renaming image name at the bottom of main.tf then doing the same steps to push work from local repo, to Github repo then to terraform-configuration server 
+Push changes to github by,
+adding a branch
 Commit message 
 pull request through github
 merge to master
+
+On terraform-configuration server to pull down latest code do 
 git checkout master
-rm .travis.yml
 git pull
 **Travis is giving me a weird error but GCP/Terraform is working correctly
 Compute Engine>staging-18x7>External IP (http://104.154.162.161) gives me Hello World! 
 
-Updating the main.go, main_test.go, Dockerfile, functional-test.sh files
-Then going git add, commit, pull request, travis, merge to master for each of them 
+Updating the main.go, main_test.go, Dockerfile, functional-test.sh files (Travis CI is working now, it needed the functional-test.sh file)
+Then doing git add, commit, pull request, travis, merge to master for each of them 
 
 Logining into terraform-configuration server
 - Gcloud compute ssh terraform-configuration
 
 Added final resource to main.tf  then 
-Git branch updatet
+Git branch 
+Git checkout branch
 Git add main.tf
 Git commit –m 
-Git push origin updatet
+Git push origin [branchname]
 
 Worked, going into terraform server to run from there 
 Terraform/main.tf
@@ -94,13 +105,17 @@ Terraform apply
 
 Didn’t work, trying again
 Added final resource to main.tf  then 
-Git branch newterra
+Git branch 
+Git checkout branch
 Git add main.tf
 Git commit –m 
-Git push origin newterra
+Git push origin [branchname]
 
 Got it to work but it was swapped 
 Production was the production
 Staging was the hello world 
 
 In order to make it work I swapped the image that was on staging to the production image on main.tf under metadata/containers
+
+Final result of production showing "Hello World" and staging/home showing bootstrap server can be found under GCP>Compute Engine>VM Instances (must be running it through terraform-configuration server first) 
+
